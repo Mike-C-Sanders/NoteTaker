@@ -63,4 +63,16 @@ router.post('/', (req, res) =>{
 
 })
 
+
+router.delete('/:id', (req, res) =>{
+    const deletedNote = req.params.id;
+
+    fs.readFile('./db/db.json', (err, data) =>{
+        if(err){
+            console.log(err);
+        }else{
+            
+        }
+    })
+})
 module.exports = router;
