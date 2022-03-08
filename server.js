@@ -18,6 +18,11 @@ app.use(express.json());
 app.use(express.static('public'));
 app.use('api', api);
 
+//Main page get route
+app.get('/', (req, res) =>{
+    res.sendFile(path.join(__dirname, '/public/notes.html'));
+})
+
 //GET /notes returning the notes.html file
 app.get('/notes', (req, res) =>{
     res.sendFile(path.join(__dirname, '/public/notes.html'));
@@ -27,34 +32,6 @@ app.get('/notes', (req, res) =>{
 app.get('*', (req, res) =>{
     res.sendFile(path.join(__dirname, '/public/index.html'));
 })
-
-// TODO: GET /api/notes should read the db.json file and return all saved notes as JSON
-//Promise version of the fs.readfile 
-const readFromFile = util.promisify(fs.readFile);
-
-app.get('/api/notes', (req, res) =>{
-    console.info(`${req.method} request received for notes`);
-    // readFromFile('./db/db.json').then((data)=> res.json(JSON.parse(data)));
-    fs.readFile('/db/db.json', (err, data) =>{
-        if(err){
-            console.log(err);
-            return;
-        }else{
-            res.json(JSON.parse(data));
-        }
-    })
-})
-
-//TODO: POST /api/notes should receive a new note to save on the request body and add it to the db.json file, and then return the new note to the client.
-const writeToFile = (destination, content) =>{
-    fs.writeFile(destination, JSON.stringify(content), (err)=> {
-        if(err){
-            console.log(err);
-        }else{
-            console.log(`Data written to: ${destination}`);
-        }
-    })
-}
 
 //should the application end up not working send to 404 page for routing error
 app.use((req, res) => {

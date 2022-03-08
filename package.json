@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Mike-C-Sanders/NoteTaker#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "uuid": "^8.3.2"
   }
 }
