@@ -2,8 +2,10 @@
 const fs = require('fs');
 //express module required for server code.
 const express = require('express');
-
+//require the path module for routing the files to the appropriate server
 const path = require('path');
+//require the util module for returning promisses for the fs module
+const util = require('util');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -25,7 +27,12 @@ app.get('*', (req, res) =>{
 })
 
 // TODO: GET /api/notes should read the db.json file and return all saved notes as JSON
-// const readFromFile = util.promisify(fs.readFile);
+//Promise version of the fs.readfile 
+const readFromFile = util.promisify(fs.readFile);
+app.get('/api/notes', (req, res) =>{
+    console.info(`${req.method} request received for ntoes`);
+    readFromFile('./db/db.json').then((data)=> res.json(JSON.parse(data)));
+})
 
 //TODO: POST /api/notes should receive a new note to save on the request body and add it to the db.json file, and then return the new note to the client.
 
