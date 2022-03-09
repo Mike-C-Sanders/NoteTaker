@@ -3,7 +3,7 @@
 
 The assignment for this project was to modify starter code to create an application called Note Taker that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.  The application’s front end has already been created. It's your job to build the back end, connect the two, and then deploy the entire application to Heroku.
 
-[Application Link] ()
+[Application Link](https://git.heroku.com/boiling-hollows-65517.git)
 
 ## Technology Used
 
@@ -34,7 +34,13 @@ Be sure to download Nodejs. You can find details on downloading and using Node i
 
 ## Usage
 
+Access using the deployed link. Follow screen shots below for a more visual guide.
 
+[homepage](./img/Home.JPG)
+
+[newnote](./img/11-express-homework-demo-01.png)
+
+[viewingnote](./img/11-express-homework-demo-02.png)
 
 ## Contribute
 
