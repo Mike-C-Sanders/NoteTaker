@@ -36,11 +36,11 @@ Be sure to download Nodejs. You can find details on downloading and using Node i
 
 Access using the deployed link. Follow screen shots below for a more visual guide.
 
-[homepage](./img/Home.JPG)
+![home page](./img/Home.JPG)
 
-[newnote](./img/11-express-homework-demo-01.png)
+![new note](./img/11-express-homework-demo-01.png)
 
-[viewingnote](./img/11-express-homework-demo-02.png)
+![viewing note](./img/11-express-homework-demo-02.png)
 
 ## Contribute
 
