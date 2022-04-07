@@ -32,15 +32,13 @@ const util = require('util');
 
 //route for retrieving all of the notes
 router.get('/', (req, res) =>{
-    fs.readFile('../db/db.json', (err, data) =>{
+    fs.readFile('./db/db.json', (err, data) =>{
         if(err){
             console.log(err);
         }else{
             // console.log(JSON.parse(data))
             res.json(JSON.parse(data));
         }
-    }).catch((err) =>{
-        console.log('get route error!', err);
     });
 });
 
