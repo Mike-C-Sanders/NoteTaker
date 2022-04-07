@@ -79,7 +79,7 @@ router.post('/', (req, res) =>{
         readAndAppend(newNote, './db/db.json');
         res.json(`Note successfully added!!`);
     }else{
-        res.error(`Error adding a new note`);
+        res.error(`Error adding a new note. Make sure all note fields have been filled out.`);
     }
 
 })
