@@ -7,16 +7,11 @@
     {
         "title": "Mike's Note",
         "text": "Test text",
-        "note_id": "2"
+        "id": "2"
     },
     {
-        "title": "January 31st, 1999",
-        "text": "Test text",
-        "note_id": "3"
-    },
-    {
-        "title": "My New Note",
-        "text": "This is my new note",
-        "note_id": "f48efb5f-74a1-4c40-b88e-97e5d0ccaf7a"
+        "title": "Let's Go Notes",
+        "text": "Added more details",
+        "id": "ad70fdc4-f655-4b8c-b849-c6e33afa7e5c"
     }
 ]

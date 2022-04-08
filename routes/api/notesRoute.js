@@ -55,7 +55,7 @@ router.post('/', (req, res) =>{
             title,
             text,
             //create a unique id for each new note
-            note_id: uuidv4()
+            id: uuidv4()
         }
         fs.readFile('./db/db.json', (err, data) =>{
             if(err){
@@ -85,15 +85,33 @@ router.post('/', (req, res) =>{
 })
 
 
-// router.delete('/:id', (req, res) =>{
-//     const deletedNote = req.params.id;
+//Delete Note Route
+router.delete('/:id', (req, res) =>{
+    //get the note id for deletion
+    const deleteNote = req.params.id;
 
-//     fs.readFile('./db/db.json', (err, data) =>{
-//         if(err){
-//             console.log(err);
-//         }else{
-            
-//         }
-//     })
-// })
+    //read all notes and match the id
+    fs.readFile('./db/db.json', (err, data) =>{
+        if(err){
+            console.log(err);
+        }else{
+            //parse the string into JSON data
+            const parseData = JSON.parse(data);
+
+            //create a new array with only the filtered data which would remove the note id.
+            const filterData = parseData.filter((note) => note.id !== deleteNote);
+            console.log('written')
+            //write to the db.json file.
+            fs.writeFile('./db/db.json', JSON.stringify(filterData, null, 4), (err)=> {
+                if(err){
+                    console.log('Error writing delete route:', err);
+                }
+                else{
+                    console.log('Successfully added notes!')
+                }
+
+            })
+        }
+    })
+})
 module.exports = router;
