@@ -2,16 +2,6 @@
     {
         "title": "Test Title",
         "text": "Test text",
-        "note_id": "1"
-    },
-    {
-        "title": "Mike's Note",
-        "text": "Test text",
-        "id": "2"
-    },
-    {
-        "title": "Let's Go Notes",
-        "text": "Added more details",
-        "id": "ad70fdc4-f655-4b8c-b849-c6e33afa7e5c"
+        "id": "1"
     }
 ]

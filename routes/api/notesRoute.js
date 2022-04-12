@@ -105,9 +105,11 @@ router.delete('/:id', (req, res) =>{
             fs.writeFile('./db/db.json', JSON.stringify(filterData, null, 4), (err)=> {
                 if(err){
                     console.log('Error writing delete route:', err);
+                    res.json(err);
                 }
                 else{
                     console.log('Successfully added notes!')
+                    res.json(filterData);
                 }
 
             })

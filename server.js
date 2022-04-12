@@ -10,8 +10,8 @@ const app = express();
 //middleware for parsing JSON urlencoded from data
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use('/api', api);
 app.use(express.static('public'));
+app.use('/api', api);
 
 //Main page get route
 app.get('/', (req, res) =>{
